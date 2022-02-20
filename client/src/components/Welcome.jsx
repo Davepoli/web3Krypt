@@ -25,6 +25,7 @@ const Welcome = () => {
     formData,
     handleChange,
     sendTransaction,
+    isLoading,
   } = useContext(TransactionContext);
 
   const handleSubmit = (e) => {
@@ -104,6 +105,7 @@ const Welcome = () => {
             </div>
           </div>
           <div className="p-5 sm:w-96 w-full flex flex-col justify-start items-center blue-glassmorphism">
+            {/* TODO: reset form after sending crypto */}
             <Input
               placeholder="Address To"
               name="addressTo"
@@ -131,9 +133,10 @@ const Welcome = () => {
 
             <div className="h-[1px] w-full bg-gray-400 my-2" />
 
-            {false ? (
+            {isLoading ? (
               <Loader />
             ) : (
+              // TODO adjust loader size to button field size (no text only loader)
               <button
                 type="button"
                 onClick={handleSubmit}

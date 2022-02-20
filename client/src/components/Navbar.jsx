@@ -58,6 +58,7 @@ const Navbar = () => {
             <li className="bg-[#2952e3] cursor-pointer py-2 px-7 mx-4 rounded-full hover:bg-[#2546bd]">
               Login
             </li>
+            {/* TODO: FB/GM login */}
           </ul>
         )}
       </div>

@@ -147,6 +147,8 @@ export const TransactionProvider = ({ children }) => {
       console.log(`Success`, transactionHash.hash);
       const transactionCount = await transactionContract.getTransactionCount();
       setTransactionCount(transactionCount.toNumber());
+
+      window.reload();
     } catch (error) {
       console.log(error);
       throw new Error("No ethereum object.");
@@ -164,9 +166,10 @@ export const TransactionProvider = ({ children }) => {
         connectWallet,
         currentAccount,
         formData,
-        setFormData,
         handleChange,
+        isLoading,
         sendTransaction,
+        setFormData,
         transactions,
       }}
     >
